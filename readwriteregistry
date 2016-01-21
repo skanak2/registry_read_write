@@ -44,7 +44,7 @@ char lszValue[255];
 		 DWORD dwType=REG_SZ;	  
 		 DWORD dwSize=255;
 
-		 lRes = RegOpenKeyEx(HKEY_LOCAL_MACHINE, "SOFTWARE\\RegisteredApplications\\kast", 0, KEY_READ, &hKey);
+		 lRes = RegOpenKeyEx(HKEY_LOCAL_MACHINE, "SOFTWARE\\RegisteredApplications\\lsdt", 0, KEY_READ, &hKey);
 
 		 regRetVal = RegQueryValueEx(hKey, TEXT("1"), 0, &dwType,(BYTE *)&lszValue, &dwSize);
 	     string str(lszValue);
@@ -68,7 +68,7 @@ void isdirpresent()//checking if the directory is present
 {
 
 	ifstream rdfile;
-	 lRes = RegOpenKeyExW(HKEY_LOCAL_MACHINE, L"SOFTWARE\\RegisteredApplications\\kast", 0, KEY_READ, &hKey);
+	 lRes = RegOpenKeyExW(HKEY_LOCAL_MACHINE, L"SOFTWARE\\RegisteredApplications\\lsdt", 0, KEY_READ, &hKey);
 	 if( lRes == ERROR_SUCCESS )
 	 {
 		dirpresent=true;
